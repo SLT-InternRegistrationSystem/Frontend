@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import AddIntern from "../pages/AddIntern";
-import InternList from "../pages/InternList";
 import Login from "../pages/Login";
+import Interns from "../pages/Interns";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/interns",
-                element: <InternList/>
+                element: <Interns/>
             },
 
         ]
