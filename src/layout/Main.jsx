@@ -9,7 +9,6 @@ const Main = () => {
   return (
     <div>
         <Navbar/>
-        <Outlet/>
         <Form/>
         <Footer/>
         

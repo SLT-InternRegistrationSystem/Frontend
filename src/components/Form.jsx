@@ -1,7 +1,9 @@
 import { Input } from "@nextui-org/react";
 import { DateInput } from "@nextui-org/react";
 import { CalendarDate } from "@internationalized/date";
-import {Select, SelectItem} from "@nextui-org/react";
+import { Select, SelectItem } from "@nextui-org/react";
+import { Textarea } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 
 //---------------------------- for the select field---------------------
 export const SelectorIcon = (props) => {
@@ -28,17 +30,22 @@ export const SelectorIcon = (props) => {
 };
 
 export const fieldOfSpecialization = [
-  {key: "QA", label: "Quality assurance"},
-  {key: "SE", label: "Software Engineering"},
-  {key: "CS", label: "Computer Science"},
-  {key: "UI/UX", label: "UI/UX"},
-  
+  { key: "QA", label: "Quality assurance" },
+  { key: "SE", label: "Software Engineering" },
+  { key: "CS", label: "Computer Science" },
+  { key: "UI/UX", label: "UI/UX" },
+];
+export const supervisor = [
+  { key: "MG", label: "M.Giridaran" },
+  { key: "ADD", label: "Amalya Damsari Dayarathna" },
+  { key: "JS", label: "Jessie Rich" },
+  { key: "FC", label: "Flora Cox" },
 ];
 //---------------------------- end of the select field---------------------
 
 export default function App() {
   return (
-    <div className="flex flex-col gap-4 p-5 ">
+    <div className="flex flex-col gap-5 p-12 md:container md:mx-auto">
       <h1 className="text-center text-2xl">Intern Registration Form</h1>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
         <Input
@@ -69,11 +76,10 @@ export default function App() {
         />
       </div>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
-        <Input
+        <Textarea
           label="Home Address/City"
           labelPlacement="outside"
           placeholder="Enter your address"
-          type="text"
         />
         <Input
           label="Institute"
@@ -95,19 +101,56 @@ export default function App() {
         />
       </div>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
-         <Select
-              disableSelectorIconRotation
-              className="max-w-xs"
-              label="Field of Specialization"
-              labelPlacement="outside"
-              placeholder="Select the field of specialization"
-              selectorIcon={<SelectorIcon />}
-            >
-              {fieldOfSpecialization.map((fieldOfSpecialization) => (
-                <SelectItem key={fieldOfSpecialization.key}>{fieldOfSpecialization.label}</SelectItem>
-              ))}
-            </Select>
-        
+        <Select
+          disableSelectorIconRotation
+          label="Field of Specialization"
+          labelPlacement="outside"
+          placeholder="Select the field of specialization"
+          selectorIcon={<SelectorIcon />}
+        >
+          {fieldOfSpecialization.map((fieldOfSpecialization) => (
+            <SelectItem key={fieldOfSpecialization.key}>
+              {fieldOfSpecialization.label}
+            </SelectItem>
+          ))}
+        </Select>
+        <Input
+          label="Languages Known"
+          labelPlacement="outside"
+          placeholder="Enter languages you  know"
+          type="text"
+        />
+      </div>
+      <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+        <Textarea
+          label="Assigned Work"
+          labelPlacement="outside"
+          placeholder="Enter assigned work to you"
+        />
+      </div>
+
+      <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+        <Select
+          disableSelectorIconRotation
+          label="Supervisor"
+          labelPlacement="outside"
+          placeholder="Select the Supervisor"
+          selectorIcon={<SelectorIcon />}
+        >
+          {supervisor.map((supervisor) => (
+            <SelectItem key={supervisor.key}>{supervisor.label}</SelectItem>
+          ))}
+        </Select>
+        <DateInput
+          label="Target Date"
+          labelPlacement="outside"
+          placeholderValue={new CalendarDate(1995, 11, 6)}
+        />
+      </div>
+      <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+        <Button color="primary">Create</Button>
+        <Button color="danger">Reset</Button>
+        <Button color="default">Back to the List</Button>
       </div>
     </div>
   );
