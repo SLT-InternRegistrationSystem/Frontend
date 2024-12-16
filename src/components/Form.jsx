@@ -2,6 +2,9 @@ import { Input } from "@nextui-org/react";
 import { DateInput } from "@nextui-org/react";
 import { CalendarDate } from "@internationalized/date";
 import { Select, SelectItem } from "@nextui-org/react";
+import {Textarea} from "@nextui-org/react";
+import {Button} from "@nextui-org/react";
+
 
 //---------------------------- for the select field---------------------
 export const SelectorIcon = (props) => {
@@ -43,7 +46,7 @@ export const supervisor = [
 
 export default function App() {
   return (
-    <div className="flex flex-col gap-4 p-5 ">
+    <div className="flex flex-col gap-5 p-12 md:container md:mx-auto">
       <h1 className="text-center text-2xl">Intern Registration Form</h1>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
         <Input
@@ -74,12 +77,12 @@ export default function App() {
         />
       </div>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
-        <Input
-          label="Home Address/City"
-          labelPlacement="outside"
-          placeholder="Enter your address"
-          type="text"
-        />
+      <Textarea
+      
+      label="Home Address/City"
+      labelPlacement="outside"
+      placeholder="Enter your address"
+    />
         <Input
           label="Institute"
           labelPlacement="outside"
@@ -138,6 +141,16 @@ export default function App() {
           placeholderValue={new CalendarDate(1995, 11, 6)}
         />
       </div>
+      <Textarea
+      label="Assigned Work"
+      labelPlacement="outside"
+      placeholder="Enter assigned work to you"
+    />
+    <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+      <Button color="primary">Create</Button>
+      <Button color="danger">Reset</Button>
+      <Button color="default">Back to the List</Button>
+    </div>
     </div>
   );
 }
