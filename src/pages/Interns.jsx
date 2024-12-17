@@ -191,7 +191,7 @@ const Interns = () => {
                   <td>{intern.endDate}</td>
                   <td>{intern.institute}</td>
                   <td>{intern.specialization}</td>
-                  <td>{intern.supervisor.name}</td>
+                  <td>{intern.supervisor}</td>
                   <td>
                     <div className="relative flex items-center gap-2">
                       <Tooltip content="Details">
@@ -255,7 +255,7 @@ const Interns = () => {
                   <Input isDisabled label="End Date" labelPlacement="outside" placeholder={selectedIntern.endDate} type="text" />
                   <Input isDisabled label="Field of Specialization" labelPlacement="outside" placeholder={selectedIntern.specialization} type="text" />
                   <Input isDisabled label="Languages Known" labelPlacement="outside" placeholder={selectedIntern.languages} type="text" />
-                  <Input isDisabled label="Supervisor" labelPlacement="outside" placeholder={selectedIntern.supervisor.name} type="email" />
+                  <Input isDisabled label="Supervisor" labelPlacement="outside" placeholder={selectedIntern.supervisor} type="email" />
                   <Input isDisabled label="Target Date" labelPlacement="outside" placeholder={selectedIntern.targetDate} type="text" />
                 </div>
                 <div className='mt-16'>
@@ -301,7 +301,7 @@ const Interns = () => {
                   <Input label="End Date" labelPlacement="outside" value={editingIntern.endDate} onChange={(e) => setEditingIntern({ ...editingIntern, endDate: e.target.value })} type="text"/>
                   <Input label="Field of Specialization" labelPlacement="outside" value={editingIntern.specialization} onChange={(e) => setEditingIntern({ ...editingIntern, specialization: e.target.value })} type="text"/>
                   <Input label="Languages Known" labelPlacement="outside" value={editingIntern.languages} onChange={(e) => setEditingIntern({ ...editingIntern, languages: e.target.value })} type="text"/>
-                  <Input label="Supervisor" labelPlacement="outside" value={editingIntern.supervisor.name} isDisabled type="text"/>
+                  <Input label="Supervisor" labelPlacement="outside" value={editingIntern.supervisor} onChange={(e) => setEditingIntern({ ...editingIntern, supervisor: e.target.value })} type="text"/>
                   <Input label="Target Date" labelPlacement="outside" value={editingIntern.targetDate} onChange={(e) => setEditingIntern({ ...editingIntern, targetDate: e.target.value })} type="text"/>
                 </div>
                 <div className='mt-16'>
