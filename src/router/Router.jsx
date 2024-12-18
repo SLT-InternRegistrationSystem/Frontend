@@ -16,7 +16,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/interns",
-                element: <Interns/>
+                element: <InternList/>
             },
 
         ]
