@@ -5,9 +5,9 @@ import axios from "axios";
 
 
 export const fieldOfSpecialization = [
-  { key: "QA", label: "Quality assurance" },
-  { key: "SE", label: "Software Engineering" },
-  { key: "CS", label: "Computer Science" },
+  { key: "QA", label: "QA" },
+  { key: "FULLSTACK", label: "FullStack" },
+  { key: "CLOUD", label: "Cloud" },
   { key: "UI/UX", label: "UI/UX" },
 ];
 
@@ -240,7 +240,7 @@ export default function App() {
               >
                 {supervisors.map((supervisor) => (
                   <SelectItem key={supervisor.name}>
-                    {supervisor.name}
+                    {`${supervisor.name} - ${supervisor.specialization}`}
                   </SelectItem>
                 ))}
               </Select>
