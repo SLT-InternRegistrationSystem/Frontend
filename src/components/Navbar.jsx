@@ -1,7 +1,15 @@
 import React from 'react'
 import {Button} from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        navigate('/login');
+    };
+
+
   return (
     <div className="navbar bg-base-100 px-8">
         <div className="navbar-start">
@@ -36,7 +44,9 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="navbar-end">
-            <a href="/login"><Button className="bg-blue font-bold text-white">Log in</Button></a>
+            <Button className="bg-blue font-bold text-white" onClick={handleLogout}>
+                Log out
+            </Button>
         </div>
     </div>
   )
