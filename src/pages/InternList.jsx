@@ -190,23 +190,25 @@ const InternList = () => {
       <div className="table_component mt-10" role="region" tabIndex="0">
         <table>
           <thead className="text-sm font-thin">
-            <tr>
-              <th>INTERN_ID</th>
-              <th>NAME</th>
+            <tr className='text-xs text-gray-500'>
+              <th>Intern_ID</th>
+              <th>Name</th>
+              <th>Mobile / Email / City</th>
               <th>NIC</th>
-              <th>TRAINING ENDS</th>
-              <th>INSTITUTE</th>
-              <th>SPECIALIZATION</th>
-              <th>SUPERVISOR</th>
-              <th>ACTIONS</th>
+              <th>Training Ends</th>
+              <th>Institute</th>
+              <th>Specialization</th>
+              <th>Supervisor</th>
+              <th>Actions</th>
             </tr>
           </thead>
-          <tbody className="text-sm">
+          <tbody className="text-xs align-top">
             {
               displayedInterns.map((intern, index) =>
                 <tr key={index}>
                   <td>{intern.internID}</td>
                   <td>{intern.name}</td>
+                  <td>{intern.mobile}<br/>{intern.email}<br/>{intern.address}</td>
                   <td>{intern.nic}</td>
                   <td>{intern.endDate}</td>
                   <td>{intern.institute}</td>

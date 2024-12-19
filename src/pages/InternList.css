@@ -16,7 +16,7 @@
 .table_component th {
     border: 1px solid #dededf;
     background-color: #f2f2f2;
-    color: #000000;
+    /* color: #000000; */
     padding: 10px;
 }
 
