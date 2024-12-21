@@ -81,6 +81,7 @@ const InternList = () => {
   const [interns, setInterns] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); 
   const [filteredInterns, setFilteredInterns] = useState([]);
+
   useEffect(() => {
     axios.get('http://localhost:8080/api/interns').then((response) => {
       console.log(response.data);
@@ -123,6 +124,7 @@ const InternList = () => {
 
   //Export All Trainees to Excel
   const exportAllTrainees = () => {
+    console.log(interns)
     const worksheet = XLSX.utils.json_to_sheet(interns); 
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "All Trainees");
