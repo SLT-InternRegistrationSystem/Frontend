@@ -124,11 +124,18 @@ const InternList = () => {
 
   //Export All Trainees to Excel
   const exportAllTrainees = () => {
-    console.log(interns)
-    const worksheet = XLSX.utils.json_to_sheet(interns); 
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "All Trainees");
-    XLSX.writeFile(workbook, "All_Trainees.xlsx"); 
+    axios.get('http://localhost:8080/api/interns')
+      .then((response) => {
+        const allInterns = response.data;
+        const worksheet = XLSX.utils.json_to_sheet(allInterns);
+        
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "All Trainees");
+        XLSX.writeFile(workbook, "All_Trainees.xlsx");
+      })
+      .catch((error) => {
+        console.error("Error fetching trainees data: ", error);
+      });
   };
 
   //Export Active Trainees to Excel
