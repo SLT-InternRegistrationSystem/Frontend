@@ -7,6 +7,7 @@ import ApplicationForm from "../pages/ApplicationForm";
 import ThankYouForApply from "../pages/ThankYouForApply";
 import Admin from "../layout/Admin";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
+import NewApplications from "../pages/Admin/NewApplications";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin",
                 element: <AdminDashboard/>
+            },
+            {
+                path: "/admin/new-applications",
+                element: <NewApplications/>
             }
         ]
     }

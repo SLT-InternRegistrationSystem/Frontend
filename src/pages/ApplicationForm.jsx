@@ -229,7 +229,7 @@ const ApplicationForm = () => {
                     <RadioGroup 
                         label={
                             <span className="text-black text-sm">
-                                10. Familiar with Programming Languages?<span className="text-red"> *</span>
+                                11. Familiar with Programming Languages?<span className="text-red"> *</span>
                             </span>
                         } 
                         className="w-1/2"
@@ -243,7 +243,7 @@ const ApplicationForm = () => {
                 <div className="flex flex-col gap-4 w-1/2 mt-12">
                     <label htmlFor="file-upload" className="flex flex-col text-sm">
                         <span className="flex items-center">
-                            11. Upload Resume<span className="text-red ml-1">*</span>
+                            12. Upload Resume<span className="text-red ml-1">*</span>
                         </span>
                         <input
                         id="file-upload"

@@ -11,9 +11,9 @@ export default function AdminSidebar({children}) {
   return (
     <aside className='h-screen'>
         <nav className='h-full flex flex-col border-r shadow-sm '>
-            <div className='p-4 pb-10 flex justify-between items-center'>
+            <div className='px-4 pt-2 pb-10 flex justify-between items-center'>
                 <img 
-                    src="logo.png" 
+                    src="/logo.png" 
                     className={`overflow-hidden transition-all ${expanded ? "w-36": "w-0 pb-12"}`} 
                     alt="logo" />
                 <button 
