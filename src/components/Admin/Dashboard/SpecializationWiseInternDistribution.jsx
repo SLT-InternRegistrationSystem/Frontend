@@ -57,7 +57,7 @@ const SpecializationWiseInternDistribution = () => {
               }
             },
           },
-          colors: ['#ffe78f', '#fa7f7f', '#84bff5', '#aaeba7'],
+          colors: ['#fed000', '#E83434', '#0056A4', '#4DB848'],
           xaxis: {
             type: 'string',
             categories: ['Fullstack', 'Cloud', 'UI/UX', 'QA', 'PM', 'BA'
