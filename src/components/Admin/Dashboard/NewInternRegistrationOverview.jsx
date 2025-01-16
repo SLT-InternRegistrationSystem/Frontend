@@ -54,7 +54,7 @@ const NewInternRegistrationOverview = () => {
                     shape: 'circle', 
                 },
             },
-            colors: ['#aaeba7', '#84bff5', '#fa7f7f', '#ffe78f'], 
+            colors: ['#4DB848', '#0056A4', '#E83434', '#fed000'], 
         },
     });
 
